@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Task2.Library
 {
-     public static class Calculator
+    public static class Calculator
     {
         /// <summary>
         /// Calculates a nth root of a number
@@ -84,7 +85,7 @@ namespace Task2.Library
             {
                 throw new ArgumentException("Can't calculate GCD of negative numbers.");
             }
-            while(b > 0)
+            while (b > 0)
             {
                 int temp = b;
                 b = a % b;
@@ -185,4 +186,5 @@ namespace Task2.Library
             }
             return result;
         }
+    }
 }
