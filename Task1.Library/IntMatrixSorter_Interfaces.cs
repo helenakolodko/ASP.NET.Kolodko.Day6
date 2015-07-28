@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Task1.Library
 {
@@ -9,7 +9,7 @@ namespace Task1.Library
         {
             SortRows(array, new DelegateAdapter(comparison));
         }
-        public static void SortRows(int[][] array, IComparer comparer)
+        public static void SortRows(int[][] array, IComparer<int[]> comparer)
         {
             int i = 1;
             bool found = true;
@@ -36,7 +36,7 @@ namespace Task1.Library
             array[i] = temp;
         }
 
-        private class DelegateAdapter: IComparer
+        private class DelegateAdapter : IComparer<int[]>
         {
             private Comparison<int[]> comparison;
             public DelegateAdapter(Comparison<int[]> comparison)
@@ -45,9 +45,9 @@ namespace Task1.Library
                     throw new ArgumentNullException();
                 this.comparison = comparison;
             }
-            public int Compare(object x, object y)
+            public int Compare(int[] x, int[] y)
             {
-                return comparison((int[]) x,(int[]) y);
+                return comparison(x, y);
             }
         }
     }

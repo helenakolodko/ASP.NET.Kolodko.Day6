@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Task1.Library
 {
     public static class IntMatrixSorter_Delegates
     {
-        public static void SortRows(int[][] array, IComparer comparer)
+        public static void SortRows(int[][] array, IComparer<int[]> comparer)
         {
             SortRows(array, (a, b) => comparer.Compare(a, b));
         }
